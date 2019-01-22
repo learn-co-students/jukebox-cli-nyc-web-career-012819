@@ -15,7 +15,7 @@ def help
   puts "- help : displays this help message"
   puts "- list : displays a list of songs you can play"
   puts "- play : lets you chose a song to play"
-  puts "exit: exits this program"
+  puts "- exit: exits this program"
 end
 
 def list(songs)
@@ -42,15 +42,22 @@ end
 
 
 def run(songs)
-  help
-  puts "Please enter a command:"
-  user_input = gets.chomp
-  case
-  if user_input = "list"
-    list(songs)
-  elsif user_input = "play"
-    play(songs)
-  elsif user_input = "exit"
-    exit_jukebox
+  user_input = ""
+  while user_input
+    puts "Please enter a command:"
+    user_input = gets.chomp
+    case user_input
+      when "help"
+        help
+      when "list"
+        list(songs)
+      when "play"
+        play(songs)
+      when "exit"
+        exit_jukebox
+        break
+      else
+        help
+      end
   end
 end
