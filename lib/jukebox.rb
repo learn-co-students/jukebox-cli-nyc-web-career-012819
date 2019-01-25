@@ -48,8 +48,8 @@ def run(songs) # give argument of songs array
       play(my_songs)
     else input == "help" # call on help if input equal to "list"
       help
+      break
+        end
+      end
+    exit_jukebox
     end
-  end
-
-  exit_jukebox # call on exit_jukebox when out of loop
-end
